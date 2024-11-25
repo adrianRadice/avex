@@ -12,9 +12,9 @@ import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro"
 import heroImage from "@images/mapa.avif";
 import faqs from "@data/faqs.json";
 import pricing from "@data/pricing.json";
-import construction from "@images/servicios.jpg";
+import construction from "@images/batery.jpg";
 import tools from "@images/servicios.jpg";
-import dashboard from "@images/servicios.jpg";
+import dashboard from "@images/keys.jpg";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -28,7 +28,7 @@ const avatarSrcs: Array<string> = [
 
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Solicitar asistencia AHORA"
+    btnTitle="Solicitar AHORA"
     url="https://api.whatsapp.com/send?phone=5491168294554&text=%C2%A1Hola!%20Necesito%20ayuda%20de%20AVEX"
   /> 
 
@@ -50,33 +50,32 @@ const avatarSrcs: Array<string> = [
 
 
   <FeaturesNavs
-    title=`Te <span class="text-yellow-500 dark:text-yellow-400">Asitimos</span> con`
+    title=`Te <span class="text-yellow-500 dark:text-yellow-400">Asistimos</span> con`
     tabs={[
       {
         heading: "Cambio de neumáticos",
         content:
           "No debes preocuparte por saber como cambiar los neumáticos, tener las herramientas o manchar tu ropa",
-        svg: "tools",
+        svg: "changeWheel",
         src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        alt: "Neumático",
         first: true,
       },
       {
         heading: "Apertura de cerraduras",
         content:
           "No llegues tarde por no poder abrir las puertas",
-        svg: "dashboard",
+        svg: "repairKey",
         src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
-        second: true,
+        alt: "Puertas",
       },
       {
         heading: "Recargas de baterías",
         content:
           "Nunca más te quedes sin energía para tu próxima aventura",
-        svg: "house",
+        svg: "changeBatery",
         src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+        alt: "Baterias",
       },
     ]}
   />
