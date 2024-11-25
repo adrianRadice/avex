@@ -1,0 +1,40 @@
+---
+import { twMerge } from 'tailwind-merge';
+import Layout from './MainLayout.astro';
+
+export interface Props {
+  frontmatter: {
+    title?: string;
+    icon?: string;
+    urlExport?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+const metadata: any = {
+  title: frontmatter?.title,
+};
+---
+
+<Layout title={metadata.title}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="flex-row flex justify-between items-center">
+      <div class="flex flex-row items-center">
+       
+        <h1
+      class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
+    >
+          {frontmatter.title}
+        </h1>
+      </div>
+      
+    </div>
+
+    <div
+      class="mx-auto prose prose-lg max-w-4xl dark:prose-invert  prose-img:rounded-md prose-img:shadow-lg mt-8 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400"
+    >
+      <slot />
+    </div>
+  </section>
+</Layout>

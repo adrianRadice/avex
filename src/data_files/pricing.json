@@ -1,0 +1,39 @@
+{
+  "title": "Contratación simple y transparente",
+  "subTitle": "Elige tu mejor plan.",
+  "badge": "Best value",
+  "thirdOption": "Sos una empresa de transporte?",
+  "btnText": "Solicitar plan a medida",
+
+  "starterKit": {
+    "name": "Pago por uso",
+    "price": "1",
+    "cents": ".00",
+    "billingFrequency": "USD / monthly",
+    "features": [
+      "1 vehículo",
+      "Recarga de batería",
+      "Cambio de neumáticos",
+      "Apertura de cerraduras"
+    ]
+  },
+
+  "professionalToolbox": {
+    "name": "Suscripción mensual",
+    "description": "Atención prioritaria",
+    "price": "20",
+    "cents": ".00",
+    "billingFrequency": "USD / monthly",
+    "features": [
+      "Nuestros asistentes avex tendran preferencia sobre otros usuarios para ayudarte",
+      "Asistente virtual 24/7",
+      "2 vehículos",
+      "Recarga de batería",
+      "Cambio de neumáticos",
+      "Apertura de cerraduras",
+      "Kit de auxilio"
+    ],
+    "purchaseBtnTitle": "Contratar",
+    "purchaseLink": "#"
+  }
+}

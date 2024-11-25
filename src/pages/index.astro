@@ -1,0 +1,135 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import heroImage from "@images/mapa.avif";
+import faqs from "@data/faqs.json";
+import pricing from "@data/pricing.json";
+import construction from "@images/servicios.jpg";
+import tools from "@images/servicios.jpg";
+import dashboard from "@images/servicios.jpg";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+];
+---
+
+<MainLayout>
+
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="Solicitar asistencia AHORA"
+    url="https://api.whatsapp.com/send?phone=5491168294554&text=%C2%A1Hola!%20Necesito%20ayuda%20de%20AVEX"
+  /> 
+
+  <HeroSection
+    title=`Asistencia vehicular <span
+        class="text-yellow-500 dark:text-yellow-400">Expres</span>`
+    subTitle="Tu ayuda en camino a un mensaje de distancia."
+    primaryBtn="Solicitar ahora"
+    primaryBtnURL="https://api.whatsapp.com/send?phone=5491168294554&text=%C2%A1Hola!%20Necesito%20ayuda%20de%20AVEX"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.8</span> / 5`
+    starCount={4}
+    reviews=` <span class="font-bold">2k</span> Asistencias`
+    src={heroImage}
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+
+
+
+  <FeaturesNavs
+    title=`Te <span class="text-yellow-500 dark:text-yellow-400">Asitimos</span> con`
+    tabs={[
+      {
+        heading: "Cambio de neumáticos",
+        content:
+          "No debes preocuparte por saber como cambiar los neumáticos, tener las herramientas o manchar tu ropa",
+        svg: "tools",
+        src: tools,
+        alt: "Yellow and black heavy equipment on brown grass field",
+        first: true,
+      },
+      {
+        heading: "Apertura de cerraduras",
+        content:
+          "No llegues tarde por no poder abrir las puertas",
+        svg: "dashboard",
+        src: dashboard,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        second: true,
+      },
+      {
+        heading: "Recargas de baterías",
+        content:
+          "Nunca más te quedes sin energía para tu próxima aventura",
+        svg: "house",
+        src: construction,
+        alt: "Gray metal building frame near tower crane during daytime",
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Casos de éxito"
+    ;
+    testimonials={[
+      {
+        content:
+          "Pinché la rueda en Palermo y me lo resolvieron en 20 minutos. Una Maravilla",
+        author: "Clara Mendez",
+        role: "",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      },
+    ]}
+    statistics={[
+      {
+        count: "200",
+        description:
+          "Recargas de baterías por mes",
+      },
+      {
+        count: "10",
+        description:
+          "10 recuperos de llaves por mes",
+      },
+      {
+        count: "400",
+        description:
+          "Remplazos de neumáticos",
+      },
+      {
+        count: "600",
+        description: "Respustas de mecánica",
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+  
+
+  <FAQ title="Preguntas<br />Frecuentes" faqs={faqs} />
+
+  <ClientsSection
+    title="Confian en nosotros"
+  />
+
+  <HeroSectionAlt
+    title="Ayudemos juntos"
+    subTitle="Si estas interesado en convertirte en un asistente AVEX estamos dispuestos a sumarte"
+    url="https://api.whatsapp.com/send?phone=5491168294554&text=%C2%A1Hola!%20Necesito%20ayuda%20de%20AVEX"
+  />
+  
+</MainLayout>
